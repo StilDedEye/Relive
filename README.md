@@ -3,7 +3,7 @@
 Relive is an app that lets you save and rediscover your memories through *time capsules*.  
 All data is stored locally, ensuring maximum 🔒 privacy and 🔐 security.  
 
-🚀 **This is the first public release after the development phase!** 🚀  
+🚀 **This is the first public release after the development stage!** 🚀  
 
 ## 🌟 Current Features:  
 - 📷 **Standard Capsule**: Create time capsules containing images that can be opened in the future.  
