@@ -4,147 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relive - Yesterday Once More</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./script.js"></script>
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background: #121212;
-            color: white;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-        header {
-            padding: 20px;
-            background: #1E88E5;
-            color: white;
-            animation: fadeIn 2s ease-in;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        .container {
-            padding-top: 100px;
-        }
-        .content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            margin: 100px 0;
-        }
-        .text {
-            max-width: 500px;
-            margin: 20px;
-            animation: slideIn 1.5s ease-in-out;
-        }
-        .image img {
-            width: 250px;
-            animation: bounceIn 1.5s ease-in-out;
-        }
-        footer {
-            padding: 10px;
-            background: #333;
-            color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideIn {
-            from { transform: translateX(-100px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes bounceIn {
-            from { transform: scale(0.5); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-        @keyframes floating {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
-        .floating {
-            animation: floating 3s infinite ease-in-out;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const text = document.querySelector(".text");
-            const image = document.querySelector(".image img");
-            const header = document.querySelector("header");
-            
-            window.addEventListener("scroll", () => {
-                let scrollPos = window.scrollY;
-                text.style.transform = `translateY(${scrollPos * 0.3}px)`;
-                image.style.transform = `rotate(${scrollPos * 0.2}deg)`;
-                header.style.background = `rgba(30, 136, 229, ${1 - scrollPos / 300})`;
-            });
-        });
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-            window.scrollTo({
-                top: target.offsetTop - 80, // 80px per compensare l'header fisso
-                behavior: "smooth"
-            });
-        }
-        });
-        window.scroll({
-  top: 2500, 
-  left: 0, 
-  behavior: 'smooth'
-});
 
-// Scroll certain amounts from current position 
-window.scrollBy({ 
-  top: 100, // could be negative value
-  left: 0, 
-  behavior: 'smooth' 
-});
-
-// Scroll to a certain element
-document.querySelector('.hello').scrollIntoView({ 
-  behavior: 'smooth' 
-});
-});
-    </script>
 </head>
 <body>
-    <header>
-        <h1 class="fade-in">Relive</h1>
-        <p class="fade-in">Yesterday Once More</p>
-    </header>
     <div class="container">
+        <div class="appTitle">
+            <h1 id="appTitle">|</h1>
+            <p  id="appSubtitle">|</p>
+        </div>
+
+
+
         <section class="content">
             <div class="text slide-in">
                 <h2>Rivivi i tuoi ricordi</h2>
                 <p>Con Relive puoi creare capsule del tempo digitali che ti sorprenderanno in futuro!</p>
             </div>
-            <div class="image bounce-in floating">
-                <img src="./resources/images/capsule_preview.png" alt="Capsula del tempo">
+            <div class="floatingStandard">
+                <img src="./resources/images/capsule_preview.png" alt="Standard Capsule">
             </div>
         </section>
+
+
         <section class="content">
+            <div class="floatingGeo">
+                <img src="./resources/images/capsule_preview.png" alt="Geo Capsule">
+            </div>
             <div class="text slide-in">
                 <h2>Scopri nuove emozioni</h2>
                 <p>Ogni capsula è una finestra sul passato, pronta a essere aperta nel momento giusto.</p>
             </div>
-            <div class="image bounce-in floating">
-                <img src="./resources/images/capsule_preview.png" alt="Macchina del tempo">
+        </section>
+
+
+        <section class="content">
+            <div class="floatingGeo">
+                <img src="./resources/images/capsule_preview.png" alt="Geo Capsule">
+            </div>
+            <div class="text slide-in">
+                <h2>Scopri nuove emozioni</h2>
+                <p>Ogni capsula è una finestra sul passato, pronta a essere aperta nel momento giusto.</p>
             </div>
         </section>
     </div>
     <footer>
-        <p>&copy; 2025 Relive. Tutti i diritti riservati.</p>
+        <p>&copy; 2025 Relive. All rights reserved.</p>
     </footer>
 </body>
 </html>

@@ -1,0 +1,88 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* #FE9710 */
+.appTitle{
+    font-family: kanit;    
+    font-size: 2em;
+    margin: 0;
+    padding: 10px;
+    color: white;
+    width: 100%;
+    top: 0;
+}
+
+.container {
+    padding-top: 100px;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 100px 0;
+}
+.text {
+    max-width: 500px;
+    margin: 20px;
+    animation: slideIn 1s ease-in-out;
+}
+img {
+    width: 250px;
+    animation: bounceIn  0.5s ease-in-out;
+}
+footer {
+    padding: 10px;
+    background: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideIn {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+@keyframes bounceIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+@keyframes floatingStandard {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+}
+@keyframes floatingGeo {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-50px); }
+    100% { transform: translateY(0); }
+}
+@keyframes floatingBluetooth {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+}
+
+.floatingStandard {
+    animation: floatingStandard 2s infinite ease-in-out;
+}
+.floatingGeo {
+    animation: floatingGeo 2s infinite ease-in-out;
+}
+.floatingBluetooth {
+    animation: floatingBluetooth 2s infinite ease-in-out;
+}
