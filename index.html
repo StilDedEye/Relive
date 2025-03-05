@@ -6,6 +6,70 @@
     <title>Relive - Yesterday Once More</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        header {
+            padding: 20px;
+            background: #4A90E2;
+            color: white;
+            animation: fadeIn 2s ease-in;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 50px 0;
+        }
+        .text {
+            max-width: 400px;
+            margin: 20px;
+            animation: slideIn 1.5s ease-in-out;
+        }
+        .image img {
+            width: 200px;
+            animation: bounceIn 1.5s ease-in-out;
+        }
+        footer {
+            padding: 10px;
+            background: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes bounceIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const text = document.querySelector(".text");
+            const image = document.querySelector(".image img");
+            
+            window.addEventListener("scroll", () => {
+                let scrollPos = window.scrollY;
+                text.style.transform = `translateY(${scrollPos * 0.5}px)`;
+                image.style.transform = `rotate(${scrollPos * 0.1}deg)`;
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
