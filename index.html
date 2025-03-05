@@ -1,54 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Homepage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            width: 100%;
-            text-align: center;
-        }
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            width: 100%;
-            text-align: center;
-        }
-    </style>
+    <title>Relive - Yesterday Once More</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Homepage</h1>
+        <h1 class="fade-in">Relive</h1>
+        <p class="fade-in">Yesterday Once More</p>
     </header>
-    <main>
-        <p>This is a simple homepage template using HTML and CSS.</p>
-        <p>Feel free to customize it to your needs.</p>
-    </main>
+    <section class="content">
+        <div class="text slide-in">
+            <h2>Rivivi i tuoi ricordi</h2>
+            <p>Con Relive puoi creare capsule del tempo digitali che ti sorprenderanno in futuro!</p>
+        </div>
+        <div class="image bounce-in">
+            <img src="capsule.png" alt="Capsula del tempo">
+        </div>
+    </section>
     <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>&copy; 2025 Relive. Tutti i diritti riservati.</p>
     </footer>
 </body>
 </html>
