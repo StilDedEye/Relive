@@ -4,7 +4,7 @@ let speedForTitle = 100;
 
 let appSubtitle = "Yesterday once more"
 let iForSubtitleTypingAnimation = 0;
-let speedForSubtitle = 50; 
+let speedForSubtitle = 25; 
 
 
 window.onload = function() {
@@ -44,12 +44,11 @@ function subtitleTypingAnimation () {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const image = document.querySelector("img");
-    const header = document.querySelector("header");
+    const image = document.querySelector(".appTitle");
     
     window.addEventListener("scroll", () => {
         let scrollPos = window.scrollY;
-        image.style.transform = `rotate(${scrollPos * 0.2}deg)`;
-        header.style.background = `rgba(30, 136, 229, ${1 - scrollPos / 300})`;
+       // image.style.transform = `rotate(${scrollPos * 0.2}deg)`;
     });
+
 });
