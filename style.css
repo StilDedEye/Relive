@@ -104,6 +104,7 @@ footer {
     transition: all 0.3s ease;
     animation: fadeIn 3s ease-in-out;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin: 25px;
 }
 
 .downloadButton:hover {
@@ -124,6 +125,43 @@ footer {
     font-size: 1.5em; /* Aggiungi un'icona se vuoi */
     margin-right: 10px;
 }
+
+
+/* Stile per il bottone di download */
+.repoButton {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #333333; /* Gradient da arancione a nero */
+    color: white;
+    font-size: 1.2em;
+    font-family: Kanit, sans-serif;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    animation: fadeIn 3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.repoButton:hover {
+    background-color:  rgba(153, 66, 255, 1);
+     /* Cambia colore al passaggio del mouse */
+    transform: scale(1.2); /* Aumenta la dimensione del bottone */
+    box-shadow: 0px 0px 50px rgba(153, 66, 255, 0.5) ;
+}
+
+.repoButton:active {
+    transform: scale(0.98); /* Effetto al clic */
+}
+
+.repoButton span {
+    margin-left: 10px;
+}
+
+.repoButton i {
+    font-size: 1.5em; /* Aggiungi un'icona se vuoi */
+    margin-right: 10px;
+}
+
 
 
 /* Sezione 'The Idea' */
