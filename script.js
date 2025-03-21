@@ -52,3 +52,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+async function getLatestReleases() {
+    console.log("CIA");
+    const owner = "stilDedEye";
+    const repo = "Relive";
+    const url = `https://api.github.com/repos/${owner}/${repo}/releases`;
+
+    try {
+        const response = await fetch(url);
+        const releases = await response.json();
+        
+        const container = document.getElementById("release-container");
+
+        if (Array.isArray(releases)) {
+            releases.forEach(release => {
+                const card = document.createElement("div");
+                card.className = "release-card";
+                card.innerHTML = `
+                    <h3>${release.name || release.tag_name}</h3>
+                    <p>${release.body ? release.body.substring(0, 100) + "..." : "No description available"}</p>
+                    <a href="${release.html_url}" target="_blank">View Release</a>
+                `;
+                container.appendChild(card);
+            });
+        }
+    } catch (error) {
+        console.error("Errore nel recupero delle release:", error);
+    }
+}
+
+getLatestReleases();
