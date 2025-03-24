@@ -219,16 +219,19 @@ hr.rounded {
 }
 
 .release-card {
-    border: 1px solid #ddd;
+    border: 1px solid #ff9900;
     border-radius: 8px;
     padding: 15px;
     background: #000000;
-    background-color: #f2eaff92;
+    background-color: #e8a44681;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .release-card a {
     text-decoration: none;
-    color: rgba(153, 66, 255, 0.5) ;
+    color: rgba(255, 255, 255, 0.651) ;
     font-weight: bold;
+    text-decoration: underline;
+    font-size: large;
 }
+

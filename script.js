@@ -6,6 +6,8 @@ let appSubtitle = "Yesterday once more"
 let iForSubtitleTypingAnimation = 0;
 let speedForSubtitle = 25; 
 
+let MAX_RETRIEVED_VERSIONS = 2;
+
 
 window.onload = function() {
     titleTypingAnimation();
@@ -62,18 +64,20 @@ async function getLatestReleases() {
 
     try {
         const response = await fetch(url);
-        const releases = await response.json();
+        let releases = await response.json();
         
         const container = document.getElementById("release-container");
 
-        if (Array.isArray(releases)) {
-            releases.forEach(release => {
+        let cutReleases = releases.slice(0, MAX_RETRIEVED_VERSIONS);
+
+        if (Array.isArray(cutReleases)) {
+            cutReleases.forEach(cutReleases => {
                 const card = document.createElement("div");
                 card.className = "release-card";
                 card.innerHTML = `
-                    <h3>${release.name || release.tag_name}</h3>
-                    <p>${release.body ? release.body.substring(0, 100) + "..." : "No description available"}</p>
-                    <a href="${release.html_url}" target="_blank">View Release</a>
+                    <h3>${cutReleases.name || cutReleases.tag_name}</h3>
+                    <p>${cutReleases.body ? cutReleases.body.substring(0, 100) + "..." : "No description available"}</p>
+                    <a href="${cutReleases.html_url}" target="_blank">View Release</a>
                 `;
                 container.appendChild(card);
             });
