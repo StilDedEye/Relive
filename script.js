@@ -73,10 +73,11 @@ async function getLatestReleases() {
         if (Array.isArray(cutReleases)) {
             cutReleases.forEach(cutReleases => {
                 const card = document.createElement("div");
+                cutReleases.body = cutReleases.body
                 card.className = "release-card";
                 card.innerHTML = `
                     <h3>${cutReleases.name || cutReleases.tag_name}</h3>
-                    <p>${cutReleases.body ? cutReleases.body.substring(0, 100) + "..." : "No description available"}</p>
+                    
                     <a href="${cutReleases.html_url}" target="_blank">View Release</a>
                 `;
                 container.appendChild(card);
