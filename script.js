@@ -77,7 +77,6 @@ async function getLatestReleases() {
                 card.className = "release-card";
                 card.innerHTML = `
                     <h3>${cutReleases.name || cutReleases.tag_name}</h3>
-                    
                     <a href="${cutReleases.html_url}" target="_blank">View Release</a>
                 `;
                 container.appendChild(card);
