@@ -1,0 +1,89 @@
+/* General body styles */
+body {
+    font-family: 'Kanit', sans-serif;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    color: #333;
+    background: #0d0d0d;
+}
+
+/* Header and title styles */
+h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+h2 {
+    color: #FE9710;
+    font-size: 1.8em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+/* Paragraph and list styles */
+p, ul {
+    color: #e5e5e5;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Link styles */
+a {
+    color: #FE9710;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #ffcc80;
+}
+
+/* Footer Styles */
+footer {
+    margin-top: 40px;
+    padding: 10px;
+    background-color: #1f1f1f;
+    color: #bbbbbb;
+    text-align: center;
+    font-size: 1em;
+}
+
+footer .privacy-link {
+    color: #bbbbbb;
+    text-decoration: underline;
+}
+
+footer .privacy-link:hover {
+    color: #FE9710;
+}
+
+/* Back Button Styles */
+.backButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FE9710;
+    color: white;
+    font-size: 1.1em;
+    text-decoration: none;
+    border-radius: 25px;
+    margin: 20px 0;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.backButton:hover {
+    background-color: #ffcc80;
+    color: black;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(254, 151, 16, 0.5);
+}

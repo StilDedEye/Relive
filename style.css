@@ -245,3 +245,17 @@ footer {
     50% { transform: translateY(-15px); }
     100% { transform: translateY(0); }
 }
+
+/* Sezione footer aggiornata con link alla privacy policy */
+footer .privacy-link {
+    color: #bbbbbb;
+    text-decoration: underline;
+    background-color: transparent;
+    margin-top: 10px;
+    transition: ease-in-out 0.3s;
+}
+
+footer .privacy-link:hover {
+    color: #FE9710;
+    transition: ease-in-out 0.3s;
+}
