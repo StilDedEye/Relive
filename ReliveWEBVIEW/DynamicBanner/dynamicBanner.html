@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BluetoothCapsule</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function onClickNavigate() {
+      // Chiama la funzione in Android tramite l'interfaccia di WebView
+      Android.navigateToActivity();
+    }
+  </script>
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .capsule-float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .blur-glow {
+      position: absolute;
+      inset: 0;
+      border-radius: 1rem;
+      filter: blur(30px);
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+
+    .neon-shadow {
+      box-shadow: 0 0 15px #395961, 0 0 30px #00CFFF, 0 0 50px #0046AD;
+    }
+    
+  </style>
+</head>
+<body class="bg-[#141218] text-white font-sans flex items-center justify-center min-h-screen px-4">
+
+  <div class="bg-gray-900" style="width: 448px; height: 144px; display: flex; flex-direction: row; border-radius: 1rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); overflow: hidden; padding: 16px; align-items: center;">
+    <div class="flex flex-col justify-center text-left text-white w-3/4">
+      <h2 class="text-2xl font-bold mb-2 neon-text">Disponibili le capsule Bluetooth!</h2>
+      <p class="text-sm text-gray-300">Lega la capsula ad uno specifico dispositivo bluetooth (anche un telefono di un amico)</p>
+    </div>
+    <div class="w-1/4 flex justify-center">
+      <img src="./bluetooth_capsule.png" alt="Capsula Bluetooth" class="w-16 capsule-float" />
+    </div>
+  </div>
+
+</body>
+</html>

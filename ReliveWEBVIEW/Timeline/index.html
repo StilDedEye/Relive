@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Timeline Animata</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              animation: {
+                float: "float 3s ease-in-out infinite",
+                "fade-in-slide": "fadeInSlide 1s ease-out forwards"
+              },
+              keyframes: {
+                float: {
+                  "0%, 100%": { transform: "translateY(0)" },
+                  "50%": { transform: "translateY(-10px)" }
+                },
+                fadeInSlide: {
+                  "0%": { opacity: "0", transform: "translateY(-20px)" },
+                  "100%": { opacity: "1", transform: "translateY(0)" }
+                }
+              }
+            }
+          }
+        };
+    </script>
+</head>
+<body style="background-color: #141218;" class="bg-gray-900 text-white font-sans">
+<div class="container mx-auto px-4 py-8 mt-32">
+    <div class="relative" id="timeline">
+        <!-- Linea centrale -->
+        <div id="timeline-line" class="absolute left-[calc(50%-1px)] transform -translate-x-1/2 h-full top-0 bottom-0 border-l-4 border-gray-600 opacity-0"></div>
+
+        <!-- Inizio -->
+        <div id="blocco_inizio" class="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-gray-800 text-white rounded-full">
+            Inizio
+        </div>
+
+        <!-- Fine -->
+        <div id="blocco_fine" class="absolute bottom-0 left-[calc(50%+1px)] transform -translate-x-1/2 p-4 bg-gray-800 text-white rounded-full">
+            Fine
+        </div>
+    </div>
+</div>
+
+<script>
+    function animateTimelineLine() {
+      const line = document.getElementById("timeline-line");
+      line.classList.add("animate-fade-in-slide");
+    }
+
+    function addTimelineEvent(position, year, title, description, type) {
+      const timeline = document.getElementById('timeline');
+      const eventContainer = document.createElement('div');
+      eventContainer.classList.add('flex', 'items-center', 'mb-16', 'opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
+
+      // Colori dinamici aggiornati
+      let textColor = 'text-purple-300';
+      let badgeColor = 'bg-purple-600';
+      let glowColor = 'bg-purple-500';
+      let imgSrc = 'standard_capsule.png';
+
+      if (type === 'geo') {
+        textColor = 'text-orange-300';
+        badgeColor = 'bg-orange-600';
+        glowColor = 'bg-orange-500';
+        imgSrc = 'geo_capsule.png';
+      } else if (type === 'bluetooth') {
+        textColor = 'text-cyan-300';
+        badgeColor = 'bg-cyan-600';
+        glowColor = 'bg-cyan-500';
+        imgSrc = 'bluetooth_capsule.png';
+      } else if (type === 'private') {
+        textColor = 'text-yellow-400';
+        badgeColor = 'bg-yellow-600';
+        glowColor = 'bg-yellow-500';
+        imgSrc = 'standard_capsule.png';
+      } else if (type === 'special') {
+        textColor = 'text-pink-300';
+        badgeColor = 'bg-pink-600';
+        glowColor = 'bg-pink-500';
+        imgSrc = 'standard_capsule.png';
+      }
+
+      // Contenitore immagine con alone sfocato
+      const iconContainer = document.createElement('div');
+      iconContainer.className = 'relative inline-block p-5 animate-float';
+
+      const glow = document.createElement('div');
+      glow.className = `absolute inset-0 rounded-xl blur-2xl opacity-40 z-0 ${glowColor}`;
+
+      const icon = document.createElement('img');
+      icon.src = imgSrc;
+      icon.alt = 'Capsule Icon';
+      icon.className = 'relative z-10 max-w-full max-h-64 object-contain rounded-lg';
+
+      iconContainer.appendChild(glow);
+      iconContainer.appendChild(icon);
+
+      const yearElement = document.createElement('h2');
+      yearElement.className = 'text-lg font-semibold text-gray-400';
+      yearElement.textContent = year;
+
+      const titleElement = document.createElement('h3');
+      titleElement.className = `text-xl font-semibold ${textColor}`;
+      titleElement.textContent = title;
+
+      const typeBadge = document.createElement('span');
+      typeBadge.className = `inline-block mt-1 px-3 py-1 text-sm rounded-full ${badgeColor}`;
+      typeBadge.textContent = `Capsula ${type}`;
+
+      const descriptionElement = document.createElement('p');
+      descriptionElement.className = 'text-sm text-gray-300';
+      descriptionElement.textContent = description;
+
+      if (position === 'left') {
+        const leftContainer = document.createElement('div');
+        leftContainer.classList.add('w-1/2', 'text-right', 'pr-8');
+        leftContainer.appendChild(iconContainer);
+
+        const rightContainer = document.createElement('div');
+        rightContainer.classList.add('w-1/2', 'pl-8');
+        rightContainer.appendChild(yearElement);
+        rightContainer.appendChild(titleElement);
+        rightContainer.appendChild(typeBadge);
+        rightContainer.appendChild(descriptionElement);
+
+        eventContainer.appendChild(leftContainer);
+        eventContainer.appendChild(rightContainer);
+      } else {
+        const leftContainer = document.createElement('div');
+        leftContainer.classList.add('w-1/2', 'text-right', 'pr-8', 'order-1');
+        leftContainer.appendChild(yearElement);
+        leftContainer.appendChild(titleElement);
+        leftContainer.appendChild(typeBadge);
+        leftContainer.appendChild(descriptionElement);
+
+        const rightContainer = document.createElement('div');
+        rightContainer.classList.add('w-1/2', 'pl-8', 'order-2');
+        rightContainer.appendChild(iconContainer);
+
+        eventContainer.appendChild(leftContainer);
+        eventContainer.appendChild(rightContainer);
+      }
+
+      timeline.appendChild(eventContainer);
+
+      setTimeout(() => {
+        eventContainer.classList.remove('opacity-0', 'translate-y-8');
+        eventContainer.classList.add('opacity-100', 'translate-y-0');
+      }, 100);
+    }
+
+    function loadCapsulesFromAndroid(data) {
+      const capsules = JSON.parse(data);
+      animateTimelineLine();
+
+      if (capsules.length === 0) {
+          // Rimuovi blocchi "Inizio" e "Fine"
+          const startBlock = document.getElementById('blocco_inizio');
+          const endBlock = document.getElementById('blocco_fine');
+          if (startBlock) startBlock.remove();
+          if (endBlock) endBlock.remove();
+
+          // Nascondi linea della timeline
+          const timelineLine = document.getElementById('timeline-line');
+          if (timelineLine) timelineLine.style.display = 'none';
+
+          const timeline = document.getElementById('timeline');
+
+          const container = document.createElement('div');
+          container.className = 'flex items-center justify-center mt-32 mb-32 opacity-0 translate-y-8 transition-all duration-700';
+
+          const iconContainer = document.createElement('div');
+          iconContainer.className = 'relative inline-block p-5 animate-float';
+
+          const glow = document.createElement('div');
+          glow.className = 'absolute inset-0 rounded-xl blur-2xl opacity-40 z-0 bg-gray-500';
+
+          const icon = document.createElement('img');
+          icon.src = 'unwell_capsule.png'; // Puoi sostituire con un'icona personalizzata
+          icon.alt = 'No Capsule Icon';
+          icon.className = 'relative z-10 max-w-full max-h-64 object-contain rounded-lg';
+
+          iconContainer.appendChild(glow);
+          iconContainer.appendChild(icon);
+
+          const textContainer = document.createElement('div');
+          textContainer.className = 'ml-8';
+
+          const message = document.createElement('h2');
+          message.className = 'text-2xl font-semibold text-gray-300 mb-2';
+          message.textContent = '📭 Nessuna capsula trovata...';
+
+          const subMessage = document.createElement('p');
+          subMessage.className = 'text-sm text-gray-500';
+          subMessage.textContent = 'Torna più tardi per rivivere altri ricordi!';
+
+          textContainer.appendChild(message);
+          textContainer.appendChild(subMessage);
+
+          container.appendChild(iconContainer);
+          container.appendChild(textContainer);
+          timeline.appendChild(container);
+
+          setTimeout(() => {
+            container.classList.remove('opacity-0', 'translate-y-8');
+            container.classList.add('opacity-100', 'translate-y-0');
+          }, 100);
+
+          return;
+        }
+
+      capsules.forEach((event, index) => {
+        setTimeout(() => {
+          addTimelineEvent(event.position, event.year, event.title, event.description, event.type);
+        }, index * 200);
+      });
+    }
+
+    // Test
+    /*
+    document.addEventListener("DOMContentLoaded", () => {
+      const dummyData = JSON.stringify([
+        { position: 'left', year: '2021', title: 'Capsula Standard', description: 'Descrizione standard', type: 'standard' },
+        { position: 'right', year: '2022', title: 'Geo Capsula', description: 'Descrizione geo', type: 'geo' },
+        { position: 'left', year: '2023', title: 'Bluetooth Capsula', description: 'Descrizione bluetooth', type: 'bluetooth' }
+      ]);
+      loadCapsulesFromAndroid(dummyData);
+    });
+    */
+</script>
+</body>
+</html>

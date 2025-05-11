@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GeoCapsula GPS Connection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        "fade-in": "fadeIn 1s ease-out forwards",
+                        "pulse": "pulse 1.5s ease-in-out infinite",
+                        "signal-wave": "signalWave 3s infinite",
+                        "fade-appear": "fadeAppear 2s ease-out forwards"
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            "0%": { opacity: "0" },
+                            "100%": { opacity: "1" }
+                        },
+                        pulse: {
+                            "0%": { transform: "scale(1)" },
+                            "50%": { transform: "scale(1.05)" },
+                            "100%": { transform: "scale(1)" }
+                        },
+                        signalWave: {
+                            "0%": { transform: "scale(1)", opacity: "1" },
+                            "100%": { transform: "scale(3)", opacity: "0" }
+                        },
+                        fadeAppear: {
+                            "0%": { opacity: "0" },
+                            "100%": { opacity: "1" }
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        /* Definizione degli stili per i cerchi concentrici */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 4px solid #fbbf24; /* Colore dell'onda */
+            opacity: 0;
+            animation: signalWave 3s infinite, fadeAppear 2s ease-out forwards; /* Aggiunto fade */
+        }
+
+        .circle1 {
+            width: 80px;
+            height: 80px;
+            animation-duration: 3s, 2s; /* Fade più lungo per il primo cerchio */
+        }
+        .circle2 {
+            width: 160px;
+            height: 160px;
+            animation-duration: 3.5s, 2.2s;
+        }
+        .circle3 {
+            width: 240px;
+            height: 240px;
+            animation-duration: 4s, 2.4s;
+        }
+        .circle4 {
+            width: 320px;
+            height: 320px;
+            animation-duration: 4.5s, 2.6s;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans flex justify-center items-center h-screen">
+
+    <div class="container mx-auto px-4 py-8 text-center">
+        <!-- Iniziale visualizzazione GeoCapsula -->
+        <div id="geo-capsule-container" class="opacity-100 transition-all duration-700">
+            <img src="geo_capsule.png" alt="GeoCapsula" class="w-40 h-40 object-contain mx-auto animate-pulse" id="geoCapsuleImage">
+            <p class="text-lg text-gray-300 mt-4">Stai preparando la GeoCapsula per la connessione GPS...</p>
+            <button id="connectBtn" class="mt-8 px-6 py-3 bg-orange-600 text-white rounded-full hover:bg-orange-500 transition-all duration-300">Connetti al GPS</button>
+        </div>
+
+        <!-- Connessione con antenne GPS -->
+        <div id="gps-connection-container" class="hidden opacity-0 transition-all duration-700 relative flex justify-center items-center mt-16">
+            <!-- Cerchi concentrici che partono dal centro della GeoCapsula -->
+            <div id="circles-container" class="absolute flex justify-center items-center">
+                <div class="circle circle1"></div>
+                <div class="circle circle2"></div>
+                <div class="circle circle3"></div>
+                <div class="circle circle4"></div>
+            </div>
+            <p class="text-lg text-gray-300 mt-4">Tentativo di connessione GPS...</p>
+        </div>
+
+        <!-- Connessione riuscita -->
+        <div id="gps-success-container" class="hidden opacity-0 transition-all duration-700">
+            <img src="gps_location_connected.png" alt="Posizione GPS" class="w-40 h-40 object-contain mx-auto">
+            <p class="text-lg text-green-300 mt-4">✅ Connessione GPS riuscita!</p>
+            <p class="text-sm text-gray-500">La tua GeoCapsula è ora connessa alla posizione geografica.</p>
+        </div>
+    </div>
+
+    <script>
+        // Funzione per simulare la connessione GPS
+        function connectToGPS() {
+            const geoCapsuleContainer = document.getElementById("geo-capsule-container");
+            const gpsConnectionContainer = document.getElementById("gps-connection-container");
+            const gpsSuccessContainer = document.getElementById("gps-success-container");
+            const connectBtn = document.getElementById("connectBtn");
+
+            // Nascondi la GeoCapsula e mostra la connessione GPS
+            geoCapsuleContainer.classList.add("opacity-0");
+            geoCapsuleContainer.classList.add("hidden");
+            gpsConnectionContainer.classList.remove("hidden");
+            gpsConnectionContainer.classList.add("opacity-100");
+
+            // Simula il processo di connessione GPS con un ritardo di 3 secondi
+            setTimeout(() => {
+                // Nascondi l'animazione dei cerchi e mostra la connessione riuscita
+                gpsConnectionContainer.classList.add("opacity-0");
+                gpsConnectionContainer.classList.add("hidden");
+                gpsSuccessContainer.classList.remove("hidden");
+                gpsSuccessContainer.classList.add("opacity-100");
+            }, 3000); // Ritardo di 3 secondi
+        }
+
+        // Gestore evento per il pulsante
+        document.getElementById("connectBtn").addEventListener("click", connectToGPS);
+    </script>
+
+</body>
+</html>

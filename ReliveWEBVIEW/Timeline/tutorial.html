@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benvenuto in Relive</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            float: "float 3s ease-in-out infinite",
+            fade: "fade 1s ease-out",
+            slideIn: "slideIn 0.6s ease-out",
+            bounceIn: "bounceIn 0.8s ease-out"
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' }
+            },
+            fade: {
+              '0%': { opacity: 0 },
+              '100%': { opacity: 1 }
+            },
+            slideIn: {
+              '0%': { transform: 'translateX(100%)', opacity: 0 },
+              '100%': { transform: 'translateX(0)', opacity: 1 }
+            },
+            bounceIn: {
+              '0%': { transform: 'scale(0.5)', opacity: 0 },
+              '60%': { transform: 'scale(1.1)', opacity: 1 },
+              '100%': { transform: 'scale(1)', opacity: 1 }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .carousel-container {
+      scroll-snap-type: x mandatory;
+      overflow-x: auto;
+      display: flex;
+      width: 100%;
+      height: 100vh;
+    }
+    .slide {
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .dots {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      transition: background-color 0.3s ease;
+    }
+    .dot.active {
+      background-color: rgba(255, 255, 255, 1);
+    }
+  </style>
+</head>
+<body class="bg-[#141218] text-white">
+  <div class="carousel-container" id="carousel">
+    
+    <!-- Slide 1: Introduzione -->
+    <section class="slide relative overflow-hidden">
+      <div class="absolute w-60 h-60 bg-yellow-500 blur-3xl opacity-30 rounded-full -z-10 animate-float"></div>
+      <img src="ic_launcher.png" alt="Logo" class="w-40 mb-6 animate-float">
+      <h1 class="text-3xl font-bold mb-4 animate-slideIn">Benvenuto in Relive</h1>
+      <p class="text-center text-gray-300 animate-fade">
+        Relive è la tua macchina del tempo personale: crea capsule del tempo con ricordi, foto e momenti da rivivere nel futuro.
+      </p>
+    </section>
+
+    <!-- Slide 2: Capsule Standard -->
+    <section class="slide relative overflow-hidden">
+      <div class="absolute w-60 h-60 bg-purple-500 blur-3xl opacity-30 rounded-full -z-10 animate-float"></div>
+      <h2 class="text-2xl font-semibold text-purple-300 mb-4 animate-slideIn">Capsule Standard</h2>
+      <p class="text-center text-gray-400 animate-fade">
+        Queste capsule contengono ricordi personali, disponibili in una data scelta.
+      </p>
+      <img src="standard_capsule.png" alt="Standard Capsule" class="w-48 mt-6 animate-bounceIn">
+    </section>
+
+    <!-- Slide 3: Capsule Geo -->
+    <section class="slide relative overflow-hidden">
+      <div class="absolute w-60 h-60 bg-orange-500 blur-3xl opacity-30 rounded-full -z-10 animate-float"></div>
+      <img src="geo_capsule.png" alt="Geo Capsule" class="w-48 mb-6 animate-bounceIn">
+      <h2 class="text-2xl font-semibold text-orange-300 mb-2 animate-slideIn">Capsule Geolocalizzate</h2>
+      <p class="text-center text-gray-400 animate-fade">
+        Rilasciabili solo in determinati luoghi. Un ricordo legato a un posto speciale.
+      </p>
+    </section>
+
+    <!-- Slide 4: Capsule Bluetooth -->
+    <section class="slide relative overflow-hidden">
+      <div class="absolute w-60 h-60 bg-cyan-500 blur-3xl opacity-30 rounded-full -z-10 animate-float"></div>
+      <h2 class="text-2xl font-semibold text-cyan-300 mb-4 animate-slideIn">Capsule Bluetooth</h2>
+      <p class="text-center text-gray-400 animate-fade">
+        Disponibili solo quando sei vicino a un dispositivo abbinato.
+      </p>
+      <img src="bluetooth_capsule.png" alt="Bluetooth Capsule" class="w-48 mt-6 animate-bounceIn">
+    </section>
+
+    <!-- Slide 5: GitHub / Credits -->
+    <section class="slide relative overflow-hidden">
+        <div class="absolute w-60 h-60 bg-white blur-3xl opacity-30 rounded-full -z-10 animate-float"></div>
+        <img src="github.png" alt="GitHub Logo" class="w-24 mb-4 animate-float relative z-10">
+        <h2 class="text-2xl font-semibold text-white mb-2 animate-slideIn">Scopri di più su GitHub</h2>
+        <p class="text-center text-gray-300 animate-fade">Sviluppata da <b>@StilDedEye</b>. Sito web
+          <a href="https://stildedeye.github.io/Relive" class="text-blue-400 hover:text-orange-500">disponibile qui</a>
+        </p>
+        
+        <div class="flex justify-center gap-6 mt-6">
+          <a href="https://github.com/StilDedEye/Relive/releases" target="_blank" class="bg-transparent text-black border-2 border-black hover:bg-black hover:text-white px-8 py-3 rounded-xl shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-black">
+            Vai alle Release
+          </a>
+        </div>
+        
+        <a href="https://github.com/StilDedEye/Relive" target="_blank" class="mt-6 bg-transparent text-black border-2 border-black hover:bg-black hover:text-white px-8 py-3 rounded-xl shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-black">
+          Visita GitHub
+        </a>
+
+        <!-- Bottone per chiudere il tutorial -->
+        <button onclick="Android.tutorialCompleted()" class="mt-8 bg-green-600 text-white hover:bg-green-700 px-6 py-3 rounded-xl shadow-xl">
+          Avanti
+        </button>
+    </section>
+    
+  </div>
+
+  <!-- Pallini di navigazione -->
+  <div class="dots">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
+  <script>
+    const carousel = document.getElementById('carousel');
+    const dots = document.querySelectorAll('.dot');
+    
+    carousel.addEventListener('scroll', () => {
+      const index = Math.round(carousel.scrollLeft / window.innerWidth);
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    });
+
+    function closeTutorial() {
+      alert("Tutorial chiuso!");
+      // Puoi aggiungere codice per chiudere la pagina o reindirizzare a un'altra sezione.
+    }
+  </script>
+</body>
+</html>
