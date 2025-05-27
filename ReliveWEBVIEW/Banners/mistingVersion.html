@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>#2DynmBnnr: v14.0_Misting Version</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function onClickNavigate() {
+      Android.navigateToActivity();
+    }
+  </script>
+  <style>
+  @keyframes orbit1 {
+    0%   { transform: translate(-50px, 50px); }
+    25%  { transform: translate(200px, -50px); }
+    50%  { transform: translate(300px, 200px); }
+    75%  { transform: translate(-70px, 200px); }
+    100% { transform: translate(180px, -120px); }
+  }
+
+  @keyframes orbit2 {
+    0%   { transform: translate(0, 0); }
+    20%  { transform: translate(300px, -100px); }
+    40%  { transform: translate(-150px, 250px); }
+    60%  { transform: translate(100px, -200px); }
+    80%  { transform: translate(-300px, 300px); }
+    100% { transform: translate(50px, -100px); }
+  }
+
+  @keyframes orbit3 {
+    0%   { transform: translate(0, 0); }
+    10%  { transform: translate(150px, -150px); }
+    30%  { transform: translate(-100px, -100px); }
+    50%  { transform: translate(250px, 250px); }
+    70%  { transform: translate(-200px, 150px); }
+    100% { transform: translate(200px, -200px); }
+  }
+
+  @keyframes orbit4 {
+    0%   { transform: translate(0, 0); }
+    15%  { transform: translate(-200px, 100px); }
+    35%  { transform: translate(300px, -150px); }
+    55%  { transform: translate(-250px, 200px); }
+    75%  { transform: translate(100px, -250px); }
+    100% { transform: translate(-180px, 300px); }
+  }
+
+  .capsule-anim1 {
+    animation: orbit1 3s ease-in-out infinite alternate;
+  }
+  .capsule-anim2 {
+    animation: orbit2 4s ease-in-out infinite alternate;
+  }
+  .capsule-anim3 {
+    animation: orbit3 4.5s ease-in-out infinite alternate;
+  }
+  .capsule-anim4 {
+    animation: orbit4 3.5s ease-in-out infinite alternate;
+  }
+
+  .blur-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    filter: blur(30px);
+    opacity: 0.5;
+    z-index: 0;
+  }
+</style>
+
+</head>
+<body class="bg-[#141218] text-white font-sans flex items-center justify-center min-h-screen px-4">
+
+  <div style="background-color: #b8871479;" class="relative bg-gray-900 rounded-2xl p-6 shadow-xl w-full max-w-md overflow-hidden">
+    <!-- Capsule animate in traiettorie irregolari -->
+    <div class="absolute -top-4 -left-4 w-12 h-12 z-0">
+      <div class="blur-glow bg-orange-500"></div>
+      <img src="misting_coin.png" class="relative z-10 w-full capsule-anim1">
+    </div>
+
+    <div class="absolute top-6 right-6 w-14 h-14 z-0">
+      <div class="blur-glow bg-orange-500"></div>
+      <img src="misting_coin.png" class="relative z-10 w-full capsule-anim2">
+    </div>
+
+    <div class="absolute top-16 left-8 w-12 h-12 z-0">
+      <div class="blur-glow bg-gray-500"></div>
+      <img src="misting_coin.png" class="relative z-10 w-full capsule-anim3">
+    </div>
+
+    <div class="absolute bottom-5 left-20 w-16 h-10 z-0"> 
+      <div class="blur-glow bg-orange-500"></div>
+      <img src="misting_coin.png" class="relative z-10 w-full capsule-anim4">
+    </div>
+
+    
+
+    <!-- Contenuto principale -->
+    <div class="relative z-10 text-center">
+      <h2 style="color: #b89e14;" class="text-2xl font-bold text-yellow-400 mb-2">Disponibile la v14.0 Misting</h2>
+      <p class="text-sm text-gray-300 mb-4">Migliorie alla stabilità e correzione di alcuni bug. <br>
+        <a style="color: orange;" href="https://play.google.com/store/search?q=relive&c=apps&hl=it"><b>Scarica qui</b></a> | 
+        <a style="color: rgb(0, 106, 255);" href="https://play.google.com/store/search?q=relive&c=apps&hl=it"><b>Changelog</b></a>
+    </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
