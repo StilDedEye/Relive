@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>1#DynamicBanner</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function onClickNavigate() {
+      Android.navigateToActivity();
+    }
+  </script>
+  <style>
+    .blur-glow {
+      position: absolute;
+      inset: 0;
+      border-radius: 1rem;
+      filter: blur(30px);
+      opacity: 0.5;
+      z-index: 0;
+    }
+  </style>
+
+</head>
+<body class="bg-[#141218] text-white font-sans flex items-center justify-center min-h-screen px-4">
+
+  <div style="background-color: #200466;" class="relative bg-gray-900 rounded-2xl p-6 shadow-xl w-full max-w-md overflow-hidden">
+  
+
+    <div class="absolute bottom-0 right-10  -mr-10  -mb-7 z-0"> 
+      <img src="../_resources/vote.png"  style="width: 150px;" >
+    </div>
+
+    
+
+    <!-- Contenuto principale -->
+    <div class="relative z-10 text-left max-w-[60%] font-mono">
+      <h2 class="font-bold mb-2 leading-snug break-words" style="font-size: 17px; font-family: 'Fira Mono', 'Consolas', monospace;">
+        <span style="background: linear-gradient(90deg, #008C45 0%, #F4F5F0 50%, #CD212A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+          Referendum 8-9 giugno
+        </span>
+      </h2>
+      <p class="text-[10px] mb-4 leading-snug font-mono whitespace-nowrap" style="font-family: 'Fira Mono', 'Consolas', monospace;">
+        <span style="color: #008C45;">La democrazia</span>
+        <span style="color: #F4F5F0;"> si costruisce con la </span>
+        <span style="color: #CD212A;">partecipazione.</span><br>
+        <span style="color: #008C45;">Informati</span>,
+        <span style="color: #F4F5F0;"> scegli</span>,
+        <span style="color: #CD212A;"> vota.</span>
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
