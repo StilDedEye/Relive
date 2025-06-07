@@ -2,14 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>1#DynamicBanner</title>
+  <title>Relive su Playstore</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     function onClickNavigate() {
+      // Chiama la funzione in Android tramite l'interfaccia di WebView
       Android.navigateToActivity();
     }
   </script>
   <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .capsule-float {
+      animation: float 4s ease-in-out infinite;
+    }
+
     .blur-glow {
       position: absolute;
       inset: 0;
@@ -19,34 +29,24 @@
       z-index: 0;
     }
   </style>
-
 </head>
 <body class="bg-[#141218] text-white font-sans flex items-center justify-center min-h-screen px-4">
 
-  <div style="background-color: #200466;" class="relative bg-gray-900 rounded-2xl p-6 shadow-xl w-full max-w-md overflow-hidden">
-  
-
-    <div class="absolute bottom-0 right-10  -mr-10  -mb-7 z-0"> 
-      <img src="./vote.png"  style="width: 150px; opacity: 0.3;" >
+  <div class="relative bg-gray-900 rounded-2xl p-6 shadow-xl w-full max-w-md overflow-hidden">
+    
+    <!-- Capsule distribuite sparpagliate e di dimensioni più piccole -->
+    <div class="absolute -top-4 -left-4 w-12 h-12 z-0">
     </div>
 
-    
+    <div class="absolute top-3 right-6 w-14 h-14 z-0">
+      <div class="blur-glow bg-blue-500"></div>
+      <img src="playstore_logo.png" class="relative z-10 w-full capsule-float rotate-[-8deg]">
+    </div>
 
     <!-- Contenuto principale -->
-    <div class="relative z-10 text-left max-w-[60%] font-mono">
-      <h2 class="font-bold mb-2 leading-snug break-words" style="font-size: 17px; font-family: 'Fira Mono', 'Consolas', monospace;">
-        <span style="background: linear-gradient(90deg, #008C45 0%, #F4F5F0 50%, #CD212A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-          Referendum 8-9 giugno
-        </span>
-      </h2>
-      <p class="text-[10px] mb-4 leading-snug font-mono whitespace-nowrap relative z-10" style="font-family: 'Fira Mono', 'Consolas', monospace; text-shadow: 0 1px 6px rgba(20,18,24,0.85), 0 0px 2px #000;">
-        <span style="color: #008C45;">La democrazia</span>
-        <span style="color: #F4F5F0;"> si costruisce con la </span>
-        <span style="color: #CD212A; text-shadow: 100 1px 8px #000;">partecipazione.</span><br>
-        <span style="color: #008C45;">Informati</span>,
-        <span style="color: #F4F5F0;"> scegli</span>,
-        <span style="color: #CD212A;"> vota.</span>
-      </p>
+    <div class="relative z-10 text-center">
+      <h2 class="text-2xl font-bold text-green-400 mb-2">Relive è su Playstore</h2>
+      <p class="text-sm text-gray-300 mb-4">Grazie a tutti i besta tester dell'app <3 </p>
     </div>
 
   </div>
