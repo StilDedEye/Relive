@@ -90,7 +90,8 @@
   padding: 10px;
   text-align: center;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: transform 0.5s ease;
 }
 
 .capsuleCard:hover {
@@ -107,6 +108,38 @@
   color: #cccccc;
   font-size: 0.95em;
 }
+
+
+.capsuleCard:not(:hover) {
+   background-color: #2e2f33;
+   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+  .standardCapsule:hover {
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    background-color: #401e64; 
+  }
+
+  .geoCapsule:hover {
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    background-color: #915f0e; 
+  }
+
+  .bluetoothCapsule:hover {
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    background-color: #167c90; 
+  }
+
+  .capsuleImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  .capsuleCard:hover .capsuleImage {
+    transform: scale(1.02);
+  }
 
 .capsuleImage {
   width: 100px;
@@ -160,36 +193,37 @@
     <div class="capsuleGrid">
 
       <!-- Standard Capsule -->
-      <div class="capsuleCard">
+      <div class="capsuleCard standardCapsule">
         <img src="./resources/images/standard_capsule.png" alt="Capsula Standard" class="capsuleImage" />
         <h3>🗓️ Capsula standard</h3>
         <p>
-          Si apre automaticamente in una data futura da te impostata. Ideale per messaggi al proprio “io del futuro”, per compleanni, anniversari o traguardi.
+          Si apre automaticamente in una data futura impostata dall'utente. Ideale per messaggi al proprio “io del futuro”, compleanni, anniversari o traguardi personali.
         </p>
       </div>
 
       <!-- Geo Capsule -->
-      <div class="capsuleCard">
+      <div class="capsuleCard geoCapsule">
         <img src="./resources/images/geo_capsule.png" alt="Capsula Geolocalizzata" class="capsuleImage" />
         <h3>📍 Geo-Capsula</h3>
         <p>
-          Si sblocca solo quando ti trovi in un luogo preciso. Perfetta per legare un ricordo a una città, a un viaggio o a un momento vissuto in uno spazio significativo.
+          Si sblocca solo quando ci si trova in un luogo preciso. Perfetta per legare un ricordo a una città o a un viaggio.
         </p>
       </div>
 
       <!-- Bluetooth Capsule -->
-      <div class="capsuleCard">
+      <div class="capsuleCard bluetoothCapsule">
         <img src="./resources/images/bluetooth_capsule.png" alt="Capsula Bluetooth" class="capsuleImage" style="padding-bottom: 25px;" />
         <h3>📶 Capsula Bluetooth</h3>
         <p>
-          Si apre solo quando sei vicino a una persona specifica con l’app installata. Pensata per ricordi condivisi, sorprese o messaggi da sbloccare insieme.
+          Si apre solo quando si è vicino ad una persona specifica con l’app installata. Pensata per ricordi condivisi, sorprese o messaggi da sbloccare insieme.
         </p>
       </div>
+
 
     </div>
 
     <p style="margin-top: 40px;">
-      <strong>Esempio:</strong> puoi scrivere un messaggio oggi e programmare l'apertura tra un anno, oppure farlo emergere solo quando torni in un luogo del cuore o incontri una persona speciale.
+      <strong>Esempio:</strong> puoi scrivere un messaggio oggi e programmarne l'apertura tra un anno, oppure far aprire la capsula solo quando torni in un luogo del cuore o incontri una persona speciale.
     </p>
   </div>
 </section>
