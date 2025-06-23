@@ -59,15 +59,15 @@ body {
 /* Neon per immagini capsule */
 .floatingStandard {
     animation: floatY 2s ease-in-out infinite;
-    filter: drop-shadow(0 0 10px #FE9710);
+    filter: drop-shadow(0 0 10px #9f10fe);
 }
 .floatingGeo {
     animation: floatY 2s ease-in-out infinite;
-    filter: drop-shadow(0 0 10px #42f5e9);
+    filter: drop-shadow(0 0 10px #f5aa42);
 }
 .floatingBluetooth {
     animation: floatY 2s ease-in-out infinite;
-    filter: drop-shadow(0 0 10px #9f42ff);
+    filter: drop-shadow(0 0 10px #42c9ff);
 }
 
 /* Bottoni neon */
