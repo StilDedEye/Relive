@@ -1,12 +1,16 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>#2DynmBnnr: Codici Amico</title>
+  <title>Relive su Playstore</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     function onClickNavigate() {
-      Android.navigateToActivity(); // Navigazione WebView Android
+      // Chiama la funzione in Android tramite l'interfaccia di WebView
+      Android.navigateToActivity();
     }
   </script>
   <style>
@@ -32,28 +36,24 @@
 <body class="bg-[#141218] text-white font-sans flex items-center justify-center min-h-screen px-4">
 
   <div class="relative bg-gray-900 rounded-2xl p-6 shadow-xl w-full max-w-md overflow-hidden">
+    
+    <!-- Capsule distribuite sparpagliate e di dimensioni più piccole -->
+    <div class="absolute -top-4 -left-4 w-12 h-12 z-0">
+    </div>
 
-    <!-- Capsule decorative -->
-    <div class="absolute -top-6 left-6 w-12 h-12 z-0">
-      <div class="blur-glow bg-emerald-400"></div>
-      </div>
-
-    <div class="absolute top-10 right-10 w-14 h-14 z-0">
-      <div class="blur-glow bg-cyan-400"></div>
-      </div>
-
-    <div class="absolute bottom-6 left-20 w-16 h-10 z-0">
-      <div class="blur-glow bg-lime-500"></div>
-      
+    <div class="absolute top-3 right-6 w-14 h-14 z-0">
+      <div class="blur-glow bg-blue-500"></div>
+      <img src="playstore_logo.png" class="relative z-10 w-full capsule-float rotate-[-8deg]">
     </div>
 
     <!-- Contenuto principale -->
     <div class="relative z-10 text-center">
-      <h2 class="text-2xl font-bold text-lime-400 mb-2">Novità: Codici Amico</h2>
-      <p class="text-sm text-gray-300 mb-4">Condividete ricordi e capsule insieme. Basta un click!</p>
+      <h2 class="text-2xl font-bold text-green-400 mb-2">Relive è su Playstore</h2>
+      <p class="text-sm text-gray-300 mb-4">Grazie a tutti i beta tester dell'app <3 </p>
     </div>
 
   </div>
 
 </body>
 </html>
+

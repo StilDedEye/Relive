@@ -2,14 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>#1DynmBnnrv15.0_Travelers Version</title>
+  <title>#2DynmBnnr: Tag </title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     function onClickNavigate() {
-      Android.navigateToActivity();
+      Android.navigateToActivity(); // Navigazione WebView Android
     }
   </script>
   <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .capsule-float {
+      animation: float 4s ease-in-out infinite;
+    }
+
     .blur-glow {
       position: absolute;
       inset: 0;
@@ -19,24 +28,29 @@
       z-index: 0;
     }
   </style>
-
 </head>
 <body class="bg-[#141218] text-white font-sans flex items-center justify-center min-h-screen px-4">
 
-  <div style="background-color: #06040A;" class="relative bg-gray-900 rounded-2xl p-6 shadow-xl w-full max-w-md overflow-hidden">
-  
+  <div class="relative bg-gray-900 rounded-2xl p-6 shadow-xl w-full max-w-md overflow-hidden">
 
-    <div class="absolute bottom-0 right-0  -mr-10  -mb-7 z-0"> 
-      <img src="./outerWildsCampfire.gif" class="relative z-10 w-[250px]">
+    <!-- Capsule decorative -->
+    <div class="absolute -top-6 left-6 w-12 h-12 z-0">
+      <div class="blur-glow bg-emerald-400"></div>
+      </div>
+
+    <div class="absolute top-10 right-10 w-14 h-14 z-0">
+      <div class="blur-glow bg-cyan-400"></div>
+      </div>
+
+    <div class="absolute bottom-6 left-20 w-16 h-10 z-0">
+      <div class="blur-glow bg-lime-500"></div>
+      
     </div>
-
-    
 
     <!-- Contenuto principale -->
     <div class="relative z-10 text-center">
-      <h2 style="color: #ff9100;" class="text-2xl font-bold text-yellow-400 mb-2">Relive v15.0 Travelers</h2>
-      <p class="text-sm text-gray-300 mb-4">Sono in arrivo le capsule amico!<br>
-    </p>
+      <h2 class="text-2xl font-bold text-lime-400 mb-2">Tag alle Capsule</h2>
+      <p class="text-sm text-gray-300 mb-4">Aggiungili alle Capsule per organizzarle meglio.</p>
     </div>
 
   </div>
