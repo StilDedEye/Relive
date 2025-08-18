@@ -113,25 +113,6 @@
         box-shadow: 0 0 15px rgba(254, 151, 16, 0.5);
     }
   </style>
-
-
-    <script>
-        window.onload = function() {
-        // Prendi l'ID dalla query string
-        const urlParams = new URLSearchParams(window.location.search);
-        const friendId = urlParams.get('friend'); // "12345"
-
-        if(friendId) {
-            // Prova ad aprire l'app
-            window.location = `relive://addfriend/${friendId}`;
-
-            // Se fallisce, dopo 1.5 secondi vai al Play Store
-            setTimeout(function() {
-            window.location = "https://play.google.com/store/apps/details?id=com.stilded.projectmemories";
-            }, 1500);
-        }
-        };
-    </script>
 </head>
 
 <body>
@@ -140,6 +121,31 @@
       <h1>Add a Friend</h1>
       <p>Share and relive memories together</p>
     </div>
+
+  <button id="openAppButton">Add a friend</button>
+    <script>
+      // Prende i parametri dalla query string
+      const urlParams = new URLSearchParams(window.location.search);
+      const friendcode = urlParams.get('friendcode');
+      const devicename = urlParams.get('devicename');
+
+      console.log(friendcode);
+      console.log(devicename);
+      // Costruisce link schema per aprire l'app
+      const appLink = 'relive://addfriend?friendcode='+encodeURIComponent(friendcode)+'&devicename='+encodeURIComponent(devicename);
+
+            console.log(appLink);
+      
+      document.getElementById('openAppButton').onclick = () => {
+        window.location.href = appLink;
+      }
+
+
+    </script>
+
+
+
+    
     <a href="index.html" class="backButton">← If nothing happens, download Relive here</a>
 
     <section class="friendSection">
