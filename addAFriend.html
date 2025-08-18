@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relive - Add a Friend</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="./resources/icons/ic_launcher.png" />
+  <script defer src="./script.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;800&display=swap');
+
+    body {
+      font-family: 'Kanit', sans-serif;
+      background-color: #1c1d20;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .appTitle h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    .appTitle p {
+      font-size: 1.2em;
+      margin: 0;
+    }
+
+    .friendSection {
+      margin-top: 40px;
+      background-color: #2e2f33;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+
+    .friendSection img {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    .friendSection h2 {
+      margin-bottom: 15px;
+    }
+
+    .friendCard {
+      background-color: #333437;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 300px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease;
+    }
+
+    .friendCard:hover {
+      transform: translateY(-6px);
+    }
+
+    .friendCard h3 {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .friendCard p {
+      font-size: 0.95em;
+      color: #cccccc;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      font-size: 0.9em;
+      text-align: center;
+    }
+
+    .privacy-link {
+      display: block;
+      margin-top: 5px;
+      color: #888;
+      text-decoration: none;
+    }
+
+    /* Back Button Styles */
+    .backButton {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #FE9710;
+        color: white;
+        font-size: 1.1em;
+        text-decoration: none;
+        border-radius: 25px;
+        margin: 20px 0;
+        transition: 0.3s ease;
+        text-align: center;
+    }
+
+    .backButton:hover {
+        background-color: #ffcc80;
+        color: black;
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(254, 151, 16, 0.5);
+    }
+  </style>
+
+
+    <!-- Script to open Relive or the Play Store-->
+    <script>
+    window.onload = function() {
+      // Prendi l'ID dall'URL
+      const path = window.location.pathname.split('/');
+      const friendId = path[path.length - 1];
+
+      // Prova ad aprire l'app
+      window.location = `relive://addfriend/${friendId}`;
+
+      // Se fallisce, dopo 1.5 secondi vai al Play Store
+      setTimeout(function() {
+        window.location = "https://play.google.com/store/apps/details?id=com.stilded.projectmemories";
+      }, 1500);
+    };
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="appTitle">
+      <h1>Add a Friend</h1>
+      <p>Share and relive memories together</p>
+    </div>
+    <a href="index.html" class="backButton">← If nothing happens, download Relive here</a>
+
+    <section class="friendSection">
+      <img src="./resources/icons/friendship.png" alt="Friendship" />
+      <h2>Why am I here?</h2>
+      <p>
+        This page lets you add a friend on <strong>Relive</strong>.  
+        Once connected, you can create shared capsules and unlock them together at the perfect moments.
+      </p>
+
+      <div class="friendCard">
+        <h3>🔗 Invite a Friend</h3>
+        <p>Share a link or a code from Relive Friends Page to invite a friend to join Relive.</p>
+      </div>
+
+      <div class="friendCard">
+        <h3>🤝 Confirm the Connection</h3>
+        <p>When your friend accepts the invite, you'll be connected and can exchange special capsules.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Relive. All rights reserved.</p>
+    <a href="./privacy.html" class="privacy-link">Privacy Policy</a>
+  </footer>
+</body>
+</html>

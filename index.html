@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -47,107 +47,103 @@
     }
 
     .conditionBoxes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin: 40px 0;
-  justify-content: center;
-}
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 40px 0;
+      justify-content: center;
+    }
 
-.conditionBox {
-  background-color: #2e2f33;
-  color: #f0f0f0;
-  padding: 20px;
-  border-radius: 15px;
-  width: 280px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease;
-}
+    .conditionBox {
+      background-color: #2e2f33;
+      color: #f0f0f0;
+      padding: 20px;
+      border-radius: 15px;
+      width: 280px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease;
+    }
 
-.conditionBox:hover {
-  transform: translateY(-6px);
-}
+    .conditionBox:hover {
+      transform: translateY(-6px);
+    }
 
-.conditionBox h3 {
-  margin-top: 0;
-  font-weight: 600;
-  font-size: 1.2em;
-}
+    .conditionBox h3 {
+      margin-top: 0;
+      font-weight: 600;
+      font-size: 1.2em;
+    }
 
+    .capsuleGrid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 40px;
+    }
 
-.capsuleGrid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 40px;
-}
+    .capsuleCard {
+      background-color: #2e2f33;
+      border-radius: 16px;
+      width: 240px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+      transition: transform 0.5s ease;
+    }
 
-.capsuleCard {
-  background-color: #2e2f33;
-  border-radius: 16px;
-  width: 240px;
-  padding: 10px;
-  text-align: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-  transition: transform 0.5s ease;
-}
+    .capsuleCard:hover {
+      transform: translateY(-8px);
+    }
 
-.capsuleCard:hover {
-  transform: translateY(-8px);
-}
+    .capsuleCard h3 {
+      font-size: 1.2em;
+      margin: 15px 0 10px;
+      color: #ffffff;
+    }
 
-.capsuleCard h3 {
-  font-size: 1.2em;
-  margin: 15px 0 10px;
-  color: #ffffff;
-}
+    .capsuleCard p {
+      color: #cccccc;
+      font-size: 0.95em;
+    }
 
-.capsuleCard p {
-  color: #cccccc;
-  font-size: 0.95em;
-}
+    .capsuleCard:not(:hover) {
+       background-color: #2e2f33;
+       transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
 
+    .standardCapsule:hover {
+      transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+      background-color: #401e64; 
+    }
 
-.capsuleCard:not(:hover) {
-   background-color: #2e2f33;
-   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
+    .geoCapsule:hover {
+      transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+      background-color: #915f0e; 
+    }
 
-  .standardCapsule:hover {
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    background-color: #401e64; 
-  }
+    .bluetoothCapsule:hover {
+      transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+      background-color: #167c90; 
+    }
 
-  .geoCapsule:hover {
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    background-color: #915f0e; 
-  }
+    .capsuleImage {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
 
-  .bluetoothCapsule:hover {
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    background-color: #167c90; 
-  }
+    .capsuleCard:hover .capsuleImage {
+      transform: scale(1.02);
+    }
 
-  .capsuleImage {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-  }
-
-  .capsuleCard:hover .capsuleImage {
-    transform: scale(1.02);
-  }
-
-.capsuleImage {
-  width: 100px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-
+    .capsuleImage {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 
@@ -160,122 +156,117 @@
 
     <section style="margin-bottom: -30px;">
       <a href="https://play.google.com/store/apps/details?id=com.stilded.projectmemories" class="downloadButton" download>
-        Scarica l'ultima versione
+        Download the latest version
       </a>
       <a href="https://github.com/StilDedEye/Relive/" class="repoButton">
-        Vedi il repository
+        View the repository
       </a>
     </section>
 
     <!-- IDEA -->
     <section class="content">
       <div class="ideaContent">
-        <h2>L'IDEA</h2>
+        <h2>THE IDEA</h2>
         <img style="width: 100px;" src="./resources/icons/friendship.png" alt="Relive Logo" class="ideaLogo" />
         <p>
-          Relive nasce per aiutarti a custodire ricordi personali, rendendoli accessibili nel momento giusto. Una capsula può contenere testi, immagini e informazioni, da "consegnare al futuro" e riaprire solo quando arriva il giorno, il luogo o la persona giusta.
+          Relive was created to help you preserve personal memories, making them accessible at the right moment.  
+          A capsule can contain texts, images, and information to "deliver to the future" and reopen only when the right day, place, or person comes.
         </p>
       </div>
     </section>
 
     <hr class="rounded" />
 
-    <!-- FUNZIONAMENTO + TIPI DI CAPSULE -->
-<section class="content">
-  <div class="ideaContent">
-    <h2>COME FUNZIONA</h2>
-    <img style="width: 100px;" src="./resources/icons/ic_launcher.png" alt="Relive Logo" />
+    <!-- HOW IT WORKS + CAPSULE TYPES -->
+    <section class="content">
+      <div class="ideaContent">
+        <h2>HOW IT WORKS</h2>
+        <img style="width: 100px;" src="./resources/icons/ic_launcher.png" alt="Relive Logo" />
 
-    <p>
-      Con <strong>Relive</strong> puoi creare una capsula del tempo digitale, contenente foto, testi o pensieri personali. La sua apertura è condizionata da una regola che scegli tu. Di seguito trovi le tre tipologie disponibili:
-    </p>
-
-    <div class="capsuleGrid">
-
-      <!-- Standard Capsule -->
-      <div class="capsuleCard standardCapsule">
-        <img src="./resources/images/standard_capsule.png" alt="Capsula Standard" class="capsuleImage" />
-        <h3>🗓️ Capsula standard</h3>
         <p>
-          Si apre automaticamente in una data futura impostata dall'utente. Ideale per messaggi al proprio “io del futuro”, compleanni, anniversari o traguardi personali.
+          With <strong>Relive</strong>, you can create a digital time capsule containing photos, texts, or personal thoughts.  
+          Its opening is governed by a rule you choose. Below are the three available types:
+        </p>
+
+        <div class="capsuleGrid">
+
+          <!-- Standard Capsule -->
+          <div class="capsuleCard standardCapsule">
+            <img src="./resources/images/standard_capsule.png" alt="Standard Capsule" class="capsuleImage" />
+            <h3>🗓️ Standard Capsule</h3>
+            <p>
+              Opens automatically on a future date set by the user. Ideal for messages to your “future self,” birthdays, anniversaries, or personal milestones.
+            </p>
+          </div>
+
+          <!-- Geo Capsule -->
+          <div class="capsuleCard geoCapsule">
+            <img src="./resources/images/geo_capsule.png" alt="Geo Capsule" class="capsuleImage" />
+            <h3>📍 Geo Capsule</h3>
+            <p>
+              Unlocks only when you are in a specific location. Perfect for tying a memory to a city or a trip.
+            </p>
+          </div>
+
+          <!-- Bluetooth Capsule -->
+          <div class="capsuleCard bluetoothCapsule">
+            <img src="./resources/images/bluetooth_capsule.png" alt="Bluetooth Capsule" class="capsuleImage" style="padding-bottom: 25px;" />
+            <h3>📶 Bluetooth Capsule</h3>
+            <p>
+              Opens only when you are near a specific person with the app installed. Designed for shared memories, surprises, or messages to unlock together.
+            </p>
+          </div>
+
+        </div>
+
+        <p style="margin-top: 40px;">
+          <strong>Example:</strong> you can write a message today and schedule it to open a year from now, or make the capsule open only when you return to a beloved place or meet a special person.
         </p>
       </div>
-
-      <!-- Geo Capsule -->
-      <div class="capsuleCard geoCapsule">
-        <img src="./resources/images/geo_capsule.png" alt="Capsula Geolocalizzata" class="capsuleImage" />
-        <h3>📍 Geo-Capsula</h3>
-        <p>
-          Si sblocca solo quando ci si trova in un luogo preciso. Perfetta per legare un ricordo a una città o a un viaggio.
-        </p>
-      </div>
-
-      <!-- Bluetooth Capsule -->
-      <div class="capsuleCard bluetoothCapsule">
-        <img src="./resources/images/bluetooth_capsule.png" alt="Capsula Bluetooth" class="capsuleImage" style="padding-bottom: 25px;" />
-        <h3>📶 Capsula Bluetooth</h3>
-        <p>
-          Si apre solo quando si è vicino ad una persona specifica con l’app installata. Pensata per ricordi condivisi, sorprese o messaggi da sbloccare insieme.
-        </p>
-      </div>
-
-
-    </div>
-
-    <p style="margin-top: 40px;">
-      <strong>Esempio:</strong> puoi scrivere un messaggio oggi e programmarne l'apertura tra un anno, oppure far aprire la capsula solo quando torni in un luogo del cuore o incontri una persona speciale.
-    </p>
-  </div>
-</section>
-
+    </section>
 
     <hr class="rounded" />
 
     <!-- APP SCREENSHOTS -->
     <section class="content" style="margin-top: 70px;">
-      <h2>SCHERMATE DELL'APP</h2>
+      <h2>APP SCREENSHOTS</h2>
       <div class="videoGallery">
         <div class="mediaCard">
-          <img src="././HomepageRelive.png" alt="Wrapped Annuale" style="width: 85%;" />
+          <img src="././HomepageRelive.png" alt="Homepage" style="width: 85%;" />
           <h4>Homepage</h4>
-          <p>La schermata iniziale, con un elenco delle varie capsule create.</p>
-        </div>
-         <div class="mediaCard">
-          <img src="./finalWrapped.gif" alt="Wrapped Annuale" style="width: 100%;" />
-          <h4>Archivio delle capsule</h4>
-          <p>Una panoramica dell'anno appena trascorso, con tutte le capsule che sono state aperte.</p>
+          <p>The initial screen, showing a list of the various created capsules.</p>
         </div>
         <div class="mediaCard">
-          <img src="./finalCapsuleCreation.gif" alt="Creazione Capsula" style="width: 100%;" />
-          <h4>Fase di creazione di una capsula</h4>
-          <p>Impostando un titolo, una descrizione, una data di apertura ed eventuali immagini è possibile creare
-            in pochi secondi una nuova capsula.
-          </p>
+          <img src="./finalWrapped.gif" alt="Yearly Wrapped" style="width: 100%;" />
+          <h4>Capsule Archive</h4>
+          <p>An overview of the past year, showing all the capsules that have been opened.</p>
+        </div>
+        <div class="mediaCard">
+          <img src="./finalCapsuleCreation.gif" alt="Capsule Creation" style="width: 100%;" />
+          <h4>Capsule Creation Phase</h4>
+          <p>By setting a title, description, opening date, and optional images, you can create a new capsule in seconds.</p>
         </div>
       </div>
     </section>
-
-
-    
 
     <hr class="rounded" />
 
     <!-- LATEST RELEASES -->
     <section>
-      <h1>ULTIME VERSIONI</h1>
+      <h1>LATEST RELEASES</h1>
       <script async defer src="https://buttons.github.io/buttons.js"></script>
       <section>
         <div id="release-container" class="release-grid"></div>
       </section>
-      <a class="github-button" href="https://github.com/stilDedEye/Relive/releases" data-icon="octicon-tag" aria-label="Visualizza le versioni su GitHub">
-        Visualizza le release su GitHub
+      <a class="github-button" href="https://github.com/stilDedEye/Relive/releases" data-icon="octicon-tag" aria-label="View releases on GitHub">
+        View releases on GitHub
       </a>
     </section>
   </div>
 
   <footer style="background-color: transparent;">
-    <p>&copy; 2025 Relive. Tutti i diritti riservati.</p>
-    <a href="./privacy.html" class="privacy-link">Informativa sulla privacy</a>
+    <p>&copy; 2025 Relive. All rights reserved.</p>
+    <a href="./privacy.html" class="privacy-link">Privacy Policy</a>
   </footer>
 </body>
 </html>
