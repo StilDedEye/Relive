@@ -122,31 +122,38 @@
       <p>Share and relive memories together</p>
     </div>
 
-  <button id="openAppButton">Add a friend</button>
-    <script>
-      // Prende i parametri dalla query string
-      const urlParams = new URLSearchParams(window.location.search);
-      const friendcode = urlParams.get('friendcode');
-      const devicename = urlParams.get('devicename');
+  <button id="openAppButton" class="backButton">Add friend</button>
 
-      console.log(friendcode);
-      console.log(devicename);
-      // Costruisce link schema per aprire l'app
-      const appLink = 'relive://addfriend?friendcode='+encodeURIComponent(friendcode)+'&devicename='+encodeURIComponent(devicename);
+<script>
+  // Prende i parametri dalla query string
+  const urlParams = new URLSearchParams(window.location.search);
+  const friendcode = urlParams.get('friendcode') || "friend";
+  const devicename = urlParams.get('devicename') || "";
 
-            console.log(appLink);
-      
-      document.getElementById('openAppButton').onclick = () => {
-        window.location.href = appLink;
-      }
+  console.log("friendcode:", friendcode);
+  console.log("devicename:", devicename);
 
+  // Cambia il testo del bottone dinamicamente
+  const button = document.getElementById('openAppButton');
+  button.textContent = `Add ${friendcode} as a friend`;
 
-    </script>
+  // Costruisce link schema per aprire l'app
+  const appLink = 'relive://addfriend?friendcode=' + encodeURIComponent(friendcode) +
+                  '&devicename=' + encodeURIComponent(devicename);
 
+  console.log("appLink:", appLink);
 
+  button.onclick = () => {
+    // Tenta di aprire l'app
+    window.location.href = appLink;
 
-    
-    <a href="index.html" class="backButton">← If nothing happens, download Relive here</a>
+    // Fallback al Play Store dopo 1,5 secondi se l'app non è installata
+    setTimeout(() => {
+      window.location.href = "https://play.google.com/store/apps/details?id=com.stilded.projectmemories";
+    }, 1500);
+  }
+</script>
+
 
     <section class="friendSection">
       <img src="./resources/icons/friendship.png" alt="Friendship" />
