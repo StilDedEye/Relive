@@ -115,22 +115,23 @@
   </style>
 
 
-    <!-- Script to open Relive or the Play Store-->
     <script>
-    window.onload = function() {
-      // Prendi l'ID dall'URL
-      const path = window.location.pathname.split('/');
-      const friendId = path[path.length - 1];
+        window.onload = function() {
+        // Prendi l'ID dalla query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const friendId = urlParams.get('friend'); // "12345"
 
-      // Prova ad aprire l'app
-      window.location = `relive://addfriend/${friendId}`;
+        if(friendId) {
+            // Prova ad aprire l'app
+            window.location = `relive://addfriend/${friendId}`;
 
-      // Se fallisce, dopo 1.5 secondi vai al Play Store
-      setTimeout(function() {
-        window.location = "https://play.google.com/store/apps/details?id=com.stilded.projectmemories";
-      }, 1500);
-    };
-  </script>
+            // Se fallisce, dopo 1.5 secondi vai al Play Store
+            setTimeout(function() {
+            window.location = "https://play.google.com/store/apps/details?id=com.stilded.projectmemories";
+            }, 1500);
+        }
+        };
+    </script>
 </head>
 
 <body>
