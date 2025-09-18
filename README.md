@@ -4,7 +4,7 @@
 All data is stored locally, ensuring maximum 🔒 privacy and 🔐 security.  
 
 ## 📱 Download  
-[![Get it on Google Play](https://img.shields.io/badge/Get%20it%20on-Google%20Play-brightgreen?style=for-the-badge&logo=google-play)](https://play.google.com/store/search?q=relive&c=apps&hl=it)
+[![Get it on Google Play](https://img.shields.io/badge/Get%20it%20on-Google%20Play-brightgreen?style=for-the-badge&logo=google-play)](https://play.google.com/store/apps/details?id=com.stilded.projectmemories)
 
 ## 🌟 Features:  
 - 📷 **Standard Capsule**: Create time capsules containing images that can be opened in the future
