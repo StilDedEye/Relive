@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>#3DynmBnnr: SecretCapsules</title>
+  <title>#3DynmBnnr: RandomCapsules</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     function onClickNavigate() {
-      Android.navigateToActivity(); // WebView Android
+      Android.navigateToActivity(); // Navigazione WebView Android
     }
   </script>
 
-  <!-- Font Orbitron per stile tech -->
+  <!-- Font Orbitron -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
@@ -35,76 +35,30 @@
       opacity: 0.6;
       z-index: 0;
     }
-
-    /* Effetto glitch */
-    .glitch {
-      position: relative;
-      display: inline-block;
-      color: #00ffae;
-      text-shadow: 0 0 3px #00ffae59, 0 0 5px rgba(0, 255, 255, 0.262), 0 0 7px rgba(0, 255, 0, 0.311);
-    }
-
-    .glitch::before,
-    .glitch::after {
-      content: attr(data-text);
-      position: absolute;
-      left: 0;
-      width: 100%;
-      overflow: hidden;
-      color: #00ffae;
-      clip: rect(0, 900px, 0, 0);
-    }
-
-    .glitch::before {
-      animation: glitchTop 0.7s infinite linear alternate-reverse;
-      color: #0ff;
-    }
-
-    .glitch::after {
-      animation: glitchBottom 0.6s infinite linear alternate-reverse;
-      color: #0f0;
-    }
-
-    @keyframes glitchTop {
-      0%   { clip: rect(2px, 9999px, 5px, 0); }
-      10%  { clip: rect(10px, 9999px, 18px, 0); transform: translate(-2px, -2px); }
-      20%  { clip: rect(2px, 9999px, 12px, 0); transform: translate(2px, 2px); }
-      30%  { clip: rect(4px, 9999px, 14px, 0); transform: translate(-1px, 1px); }
-      100% { clip: rect(0, 9999px, 0, 0); transform: none; }
-    }
-
-    @keyframes glitchBottom {
-      0%   { clip: rect(30px, 9999px, 60px, 0); transform: translate(0, 0); }
-      10%  { clip: rect(50px, 9999px, 80px, 0); transform: translate(3px, -1px); }
-      20%  { clip: rect(40px, 9999px, 70px, 0); transform: translate(-3px, 2px); }
-      30%  { clip: rect(35px, 9999px, 65px, 0); transform: translate(1px, -1px); }
-      100% { clip: rect(0, 9999px, 0, 0); transform: none; }
-    }
   </style>
 </head>
 
-<body class="bg-[#0d0b16] text-white flex items-center justify-center min-h-screen px-4">
+<body class="bg-[#0d0b16] text-white font-sans flex items-center justify-center min-h-screen px-4">
 
-  <div class="relative bg-[#1a1725] rounded-2xl p-6 shadow-2xl shadow-green-400/20 w-full max-w-md overflow-hidden">
+  <div class="relative bg-[#1a1725] rounded-2xl p-6 shadow-2xl shadow-indigo-700/30 w-full max-w-md overflow-hidden">
 
-    <!-- Glow + immagine fluttuante -->
-    <div class="absolute top-4 right-6 w-14 h-14 z-0">
-      <div class="blur-glow bg-green-400"></div>
-      <img src="lock.gif" alt="Decor" class="w-[65px] max-w-none relative z-10 capsule-float rotate-[-8deg]">
+    <!-- Capsule decorative -->
+    <div class="absolute -top-6 left-6 w-12 h-12 z-0">
+      <div class="blur-glow bg-purple-500"></div>
+    </div>
 
+    <div class="absolute top-10 right-10 w-14 h-14 z-0">
+      <div class="blur-glow bg-pink-500"></div>
+    </div>
 
-
+    <div class="absolute bottom-6 left-20 w-16 h-10 z-0">
+      <div class="blur-glow bg-indigo-400"></div>
     </div>
 
     <!-- Contenuto principale -->
     <div class="relative z-10 text-center">
-      <h2 class="text-2xl font-bold text-green-400 mb-2">
-        <span class="glitch" data-text="Secret">Secret</span> Capsules</span>
-      </h2>
-
-      <p class="text-sm text-gray-300 mb-4">
-        Unlock your hidden memories with a <span class="glitch" data-text="password">password</span>
-      </p>
+      <h2 class="text-2xl font-bold text-indigo-400 mb-2">Random Capsules</h2>
+      <p class="text-sm text-gray-300 mb-4">Can't pick a date? Relive does it for you!</p>
     </div>
 
   </div>

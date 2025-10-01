@@ -2,57 +2,112 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>#1DynmBnnr: v16.0.0_Ronova Version</title>
+  <title>#1DynmBnnr: SecretCapsules</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     function onClickNavigate() {
-      Android.navigateToActivity();
+      Android.navigateToActivity(); // WebView Android
     }
   </script>
+
+  <!-- Font Orbitron per stile tech -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+
   <style>
-    /* Animazione dello sfondo della card */
-    .animated-card-bg {
-      background: url('chain_pattern.svg');
-      background-size: 300px;
-      background-repeat: repeat;
-      animation: moveChains 60s linear infinite;
+    body {
+      font-family: 'Orbitron', sans-serif;
     }
 
-    @keyframes moveChains {
-      0% {
-        background-position: 0 0;
-      }
-      100% {
-        background-position: -300px -300px;
-      }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
 
-    .card-img {
+    .capsule-float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .blur-glow {
       position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 55px;
-      transform: translate(-10px, -5px);
-      z-index: 1;
-      opacity: 0.8;
+      inset: 0;
+      border-radius: 1rem;
+      filter: blur(30px);
+      opacity: 0.6;
+      z-index: 0;
+    }
+
+    /* Effetto glitch */
+    .glitch {
+      position: relative;
+      display: inline-block;
+      color: #00ffae;
+      text-shadow: 0 0 3px #00ffae59, 0 0 5px rgba(0, 255, 255, 0.262), 0 0 7px rgba(0, 255, 0, 0.311);
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      color: #00ffae;
+      clip: rect(0, 900px, 0, 0);
+    }
+
+    .glitch::before {
+      animation: glitchTop 0.7s infinite linear alternate-reverse;
+      color: #0ff;
+    }
+
+    .glitch::after {
+      animation: glitchBottom 0.6s infinite linear alternate-reverse;
+      color: #0f0;
+    }
+
+    @keyframes glitchTop {
+      0%   { clip: rect(2px, 9999px, 5px, 0); }
+      10%  { clip: rect(10px, 9999px, 18px, 0); transform: translate(-2px, -2px); }
+      20%  { clip: rect(2px, 9999px, 12px, 0); transform: translate(2px, 2px); }
+      30%  { clip: rect(4px, 9999px, 14px, 0); transform: translate(-1px, 1px); }
+      100% { clip: rect(0, 9999px, 0, 0); transform: none; }
+    }
+
+    @keyframes glitchBottom {
+      0%   { clip: rect(30px, 9999px, 60px, 0); transform: translate(0, 0); }
+      10%  { clip: rect(50px, 9999px, 80px, 0); transform: translate(3px, -1px); }
+      20%  { clip: rect(40px, 9999px, 70px, 0); transform: translate(-3px, 2px); }
+      30%  { clip: rect(35px, 9999px, 65px, 0); transform: translate(1px, -1px); }
+      100% { clip: rect(0, 9999px, 0, 0); transform: none; }
     }
   </style>
 </head>
 
-<body class="bg-[#141218] text-white font-sans flex items-center justify-center min-h-screen px-4 overflow-hidden">
+<body class="bg-[#0d0b16] text-white flex items-center justify-center min-h-screen px-4">
 
-  <!-- Card con sfondo animato -->
-  <div class="relative rounded-2xl p-6 shadow-xl w-full max-w-md overflow-hidden animated-card-bg" style="background-color: #06040A;">
+  <div class="relative bg-[#1a1725] rounded-2xl p-6 shadow-2xl shadow-green-400/20 w-full max-w-md overflow-hidden">
 
-    <!-- Immagine decorativa migliorata -->
-    <img src="./chained_geo_capsule.png" alt="Decor" class="card-img" />
+    <!-- Glow + immagine fluttuante -->
+    <div class="absolute top-4 right-6 w-14 h-14 z-0">
+      <div class="blur-glow bg-green-400"></div>
+      <img src="lock.gif" alt="Decor" class="w-[65px] max-w-none relative z-10 capsule-float rotate-[-8deg]">
+
+
+
+    </div>
 
     <!-- Contenuto principale -->
     <div class="relative z-10 text-center">
-      <h2 style="color: #eaca94;" class="text-2xl font-bold mb-2">Relive v16.0.0 Ronova</h2>
-      <p class="text-sm text-gray-300 mb-4">Discover two new Capsules and a better UI</p>
+      <h2 class="text-2xl font-bold text-green-400 mb-2">
+        <span class="glitch" data-text="Secret">Secret</span> Capsules</span>
+      </h2>
+
+      <p class="text-sm text-gray-300 mb-4">
+        Unlock your hidden memories with a <span class="glitch" data-text="password">password</span>
+      </p>
     </div>
 
   </div>
+
 </body>
 </html>
