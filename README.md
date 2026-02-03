@@ -30,4 +30,4 @@ All data is stored locally, ensuring maximum 🔒 privacy and 🔐 security.
 - **No Tracking**: We don't collect any personal data
 
  
-### **_Relive, because memories deserve to be remembered_**. ⏳💙  
+### **_Relive, because memories deserve to be remembered_**. ⏳🧡  
