@@ -1,6 +1,6 @@
 # [Relive - *Yesterday once more*](https://stildedeye.github.io/Relive/) ✨  
 
-**Relive v15.4.0 "Travelers"** is an app that lets you save and rediscover your memories through *time capsules*.  
+**Relive** is an app that lets you save and rediscover your memories through *time capsules*.  
 All data is stored locally, ensuring maximum 🔒 privacy and 🔐 security.  
 
 ## 📱 Download  
